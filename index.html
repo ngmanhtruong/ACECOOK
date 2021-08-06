@@ -7,8 +7,16 @@
     <title>Acecook</title>
 
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/jquery-3.6.0.min.js" ></script>
+    <script src="assets/js/myScript.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script src= "assets/js/anime.min.js"></script>
+    <script src= "assets/js/ScrollMagic.min.js"></script>
 </head>
 <body>
+    <div class="loader-contain">
+        <div class="loader"></div>
+    </div>
     <div class = "page-content">
         <section class = "banner">
             <div class = "wrap">
@@ -347,8 +355,510 @@
             </div>
         </section>
     </div>
-    <script src="assets/js/jquery-3.6.0.min.js" ></script>
-    <script src="assets/js/myScript.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
+
+    <script>
+        $(function(){
+            $('.loader-contain').fadeOut();
+            animate();
+        })
+        function animate(){
+            var controller = new ScrollMagic.Controller();
+            //BANNER
+            new ScrollMagic.Scene({
+                triggerElement: ".banner",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.banner:before',
+                    translateX: [-100, 0],
+                    easing: 'linear',
+                    opacity: [0, 1],
+                })
+                anime({
+                    targets: 'section.banner .wrap .banner-content .text-content .img1',
+                    translateX: [-100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad'
+                })
+                anime({
+                    targets: 'section.banner .wrap .banner-content .text-content .img2',
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.banner .wrap .banner-content .text-content .img3',
+                    translateX: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.banner .wrap .banner-content .text-content .img4',
+                    translateX: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    delay: 1000
+                })
+                anime({
+                    targets: 'section.banner .wrap .banner-content .text-content .img5',
+                    translateY: [-100, 0],
+                    opacity: [0, 1],
+                    delay: 1000
+                })
+                anime({
+                    targets: 'section.banner .wrap .banner-content .noodle-bowl .image',
+                    translateX: [200, 0],
+                    opacity: [0, 1],
+                    delay: 500,
+                    duration: 2000
+                })
+                anime({
+                    targets: 'section.banner .wrap .waves',
+                    translateY: [-100, 0],
+                    opacity: [0, 1],
+                    delay: 500,
+                })
+            })
+
+            //TITLE 1
+            new ScrollMagic.Scene({
+                triggerElement: "section.title.title1",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.title1 .wrap .item.item1',
+                    translateY: [-100, 0],
+                    easing: 'linear',
+                    opacity: [0, 1],
+                })
+                anime({
+                    targets: '.cook-text.red-text.utm',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.title1 .wrap .item.item2',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 1000
+                })  
+            })
+            
+            //SECTION TEXT1
+            new ScrollMagic.Scene({
+                triggerElement: "section.text1",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                let elements = document.querySelectorAll('section.text1 .wrap .col-xl-6 p');
+                let delayAnimation = 500;
+                for (e of elements){
+                    anime({
+                        targets: e,
+                        translateY: [100, 0],
+                        easing: 'easeInQuad',
+                        opacity: [0, 1],
+                        delay: delayAnimation
+                    })
+                    delayAnimation = delayAnimation + 500;
+                }
+            })
+
+            //SECTION CONTENT1
+            new ScrollMagic.Scene({
+                triggerElement: "section.content.content1",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.content.content1 .item.item1',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    duration: 2000
+                })
+                anime({
+                    targets: 'section.content.content1 .item-width .item-title',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    translateY: [100,0],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.content.content1 .item-width .item-text',
+                    easing: 'easeInQuad',
+                    translateY: [100,0],
+                    opacity: [0, 1],
+                    delay: 1000
+                })
+            })
+
+            //SECTION CONTENT2
+            new ScrollMagic.Scene({
+                triggerElement: "section.content.content2",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.content.content2 .item.item2',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    duration: 2000
+                })
+                anime({
+                    targets: 'section.content.content2 .item-width .item-title',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    translateY: [100,0],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.content.content2 .item-width .item-text',
+                    easing: 'easeInQuad',
+                    translateY: [100,0],
+                    opacity: [0, 1],
+                    delay: 1000
+                })
+            })
+
+            //SECTION CONTENT2
+            new ScrollMagic.Scene({
+                triggerElement: "section.content.content3",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.content.content3 .item.item1',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    duration: 2000
+                })
+                anime({
+                    targets: 'section.content.content3 .item-width .item-title',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    translateY: [100,0],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.content.content3 .item-width .item-text',
+                    easing: 'easeInQuad',
+                    translateY: [100,0],
+                    opacity: [0, 1],
+                    delay: 1000
+                })
+            })
+
+            //TITLE 2
+            new ScrollMagic.Scene({
+                triggerElement: "section.title.title2",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.title2 .wrap .item.item1',
+                    translateY: [-100, 0],
+                    easing: 'linear',
+                    opacity: [0, 1],
+                })
+                anime({
+                    targets: '.cook-text.red-text.utm',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.title2 .wrap .item.item2',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 1000
+                })  
+            })
+
+            //TEXT2
+            new ScrollMagic.Scene({
+                triggerElement: "section.text2",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.text2 .wrap .image',
+                    translateX: [200, 0],
+                    opacity: [0, 1],
+                })
+                anime({
+                    targets: 'section.text2 .wrap .text-wrap .noodle_image',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.text2 .wrap .text-wrap .text-box',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 1000
+                })  
+            })
+
+            //TEXT2
+            new ScrollMagic.Scene({
+                triggerElement: "section.click1",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.click1 .wrap .bl-img',
+                    translateX: [-100, 0],
+                    opacity: [0, 1],
+                    easing: "easeInQuad"
+                })
+                anime({
+                    targets: 'section.click1 .wrap .bl-img .icon.icon1',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.click1 .wrap .bl-img .icon.icon2',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.click1 .wrap .bl-img .icon.icon3',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.click1 .wrap .bl-img .bl-text',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 1000
+                })
+                let elements = document.querySelectorAll('section.click1 .wrap .buttons .btn');
+                let delay = 250;
+                for ( e of elements){
+                    anime({
+                        targets: e,
+                        translateX: [100, 0],
+                        opacity: [0, 1],
+                        duration: 500,
+                        delay: delay
+                    })
+                    delay += 250;
+                }  
+            })
+
+            //TITLE 3
+            new ScrollMagic.Scene({
+                triggerElement: "section.title3",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.title3 .wrap .item.center-item .ellipse-line',
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    duration: 2000
+                })
+                anime({
+                    targets: 'section.title3 .wrap .item.center-item .ellipse-line .ellipse .noodle',
+                    translateY: ['-40%', '-50%'],
+                    translateX: '-50%',
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                })
+                anime({
+                    targets: 'section.title3 .wrap .item.right-item .image',
+                    translateY: [-100, 0],
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.title3 .wrap .item.left-item .image',
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    delay: 500
+                })
+                anime({
+                    targets: 'section.title3 .wrap .item.right-item .text',
+                    translateY: [-100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 1000
+                })
+                anime({
+                    targets: 'section.title3 .wrap .item.left-item .text',
+                    translateY: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 1000
+                })      
+            })
+
+            //CONTENT 4
+            new ScrollMagic.Scene({
+                triggerElement: "section.content4",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.content4 .wrap .text-wrap',
+                    translateX: [-100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad'
+                })
+                anime({
+                    targets: 'section.content4 .wrap .image',
+                    translateX: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                })
+            })
+
+            //TITLE 4
+            new ScrollMagic.Scene({
+                triggerElement: "section.title4",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.title4 .wrap .text',
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad'
+                })
+                anime({
+                    targets: 'section.title4 .wrap .item',
+                    translateX: [100, 0],
+                    easing: 'easeInQuad',
+                    opacity: [0, 1],
+                    delay: 500
+                })
+            })
+
+            //TEXT 3
+            new ScrollMagic.Scene({
+                triggerElement: "section.text3",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                let elements = document.querySelectorAll('section.text3 .col-xl-6 .text p');
+                let delay = 500;
+                for (e of elements){
+                    anime({
+                        targets: e,
+                        translateY: [100, 0],
+                        opacity: [0, 1],
+                        easing: 'easeInQuad',
+                        delay: delay
+                    })
+                    delay+= 500;
+                }
+            })
+
+            //PROTOCOL
+            new ScrollMagic.Scene({
+                triggerElement: "section.protocol",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.protocol .image',
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    duration: 2000
+                })
+                let elements = document.querySelectorAll('section.text4 .col-text .bl-text p');
+                delay = 250;
+                for (e of elements){
+                    anime({
+                        targets: e,
+                        translateY: [100, 0],
+                        opacity: [0, 1],
+                        easing: 'easeInQuad',
+                        delay: delay
+                    })
+                    delay+= 250;
+                }
+            })
+
+            //TEXT 5
+            new ScrollMagic.Scene({
+                triggerElement: "section.protocol",
+                triggerHook: 0.9,
+                offset: 50, // move trigger to center of element
+                reverse: false // only do once
+            })
+            .addTo(controller)
+            .on('enter',function(event){
+                anime({
+                    targets: 'section.text5 .col-xl-6 .text',
+                    translateY: [100, 0],
+                    opacity: [0, 1],
+                    easing: 'easeInQuad',
+                    duration: 2000
+                })
+            })
+        }
+    </script>
 </body>
 </html>

@@ -73,6 +73,36 @@ img{
 .enable{
     display: block !important;
 }
+.loader-contain{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f1f2;
+    .loader {
+        width: 30px;
+        height: 30px;
+        animation: loading 1s infinite ease-out;
+        margin: auto;
+        border-radius: 50%;
+        background-color: #fcd75d;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(8);
+        opacity: 0;
+    }
+}
 section{
     &.banner{
         background: url('../images/img5.png') no-repeat;
@@ -112,7 +142,7 @@ section{
                     .img1{
                         width: 112.5%;
                         transform: scale(1);
-                        opacity: 1;
+                        opacity: 0;
                         @media (max-width: 767px){
                             width: 100%;
                         }
@@ -123,7 +153,7 @@ section{
                         top: 15%;
                         left: 25%;
                         transform: scale(1);
-                        opacity: 1;
+                        opacity:0;
                         @media (max-width: 767px){
                             left: 10%;
                         }
@@ -135,7 +165,7 @@ section{
                         width: 70%;
                         z-index: 2;
                         transform: scale(1);
-                        opacity: 1;
+                        opacity: 0;
                         @media (max-width: 767px){
                             width: 50%;
                             left: 0px;
@@ -148,7 +178,7 @@ section{
                         width: 100%;
                         z-index: 3;
                         transform: scale(1);
-                        opacity: 1;
+                        opacity: 0;
                         @media (max-width: 767px){
                             width: 75%;
                             right: 9%;
@@ -161,7 +191,7 @@ section{
                         width: 20%;
                         z-index: 1;
                         transform: scale(1);
-                        opacity: 1;
+                        opacity: 0;
                         @media (max-width: 767px){
                             left: 25%;
                             width: 15%;
@@ -179,6 +209,7 @@ section{
                         position: relative;
                         top: 5%;
                         right: 0%;
+                        opacity: 0;
                         @media (max-width: 767px){
                             width: 80%;
                             margin-left: 50%;
@@ -195,6 +226,7 @@ section{
                 background: url('../images/img6.png') bottom center no-repeat;
                 background-size: cover;
                 margin-top: 50px;
+                opacity: 0;
                 @media (max-width: 767px){
                     margin-top: -40px;
                 }
@@ -217,10 +249,12 @@ section{
             background-size: cover;
             .item{
                 margin: 0 auto;
+                opacity: 0;
                 &.item1{
                     padding-top: 40px;
                     padding-bottom: 10px;
                     width: 9%;
+                    
                     @media (max-width: 1440px){
                         width: 20%;
                     }
@@ -269,6 +303,7 @@ section{
                     padding: 50px 20px;
                 }
                 p{
+                    opacity: 0;
                     font-size: 18px;
                     @media (max-width: 1440px) {
                         font-size: 16px;
@@ -312,6 +347,7 @@ section{
                 padding: 50px 20px;
             }
             .item-title{
+                opacity: 0;
                 position: relative;
                 font-size: 42px;
                 font-weight: bold;
@@ -346,6 +382,7 @@ section{
                 }
             }
             .item-text{
+                opacity: 0;
                 font-size: 18px;
                 line-height: 1.8;
                 @media (max-width: 1440px) {
@@ -361,6 +398,9 @@ section{
         .wrap{
             background: url('../images/rectangle5.png') no-repeat;
             background-size: cover;
+            .item.item1{
+                opacity: 0;
+            }
         }
     }
     &.content2{
@@ -377,6 +417,9 @@ section{
                     background: url('../images/background2.png') no-repeat;
                     background-size: cover;
                 }
+                &.item2{
+                    opacity: 0;
+                }
             }
         }
     }
@@ -384,6 +427,9 @@ section{
         .wrap{
             background: url('../images/background.png') center no-repeat;
             background-size: cover;
+            .item.item1{
+                opacity: 0;
+            }
         }
     }
     &.title2{
@@ -393,6 +439,7 @@ section{
             padding: 50px 0;
             .item{
                 margin: 0 auto;
+                opacity: 0;
                 &.item1{
                     padding: 20px 0 20px 0px;
                     width: 9%;
@@ -425,6 +472,7 @@ section{
             .cook-text{
                 text-align: center;
                 font-size: 36px;
+                opacity: 0;
                 @media (max-width: 1440px) {
                     font-size: 24px;
                 }
@@ -454,6 +502,7 @@ section{
                     display: flex;
                     align-items: center;
                     padding-right: 5%;
+                    opacity: 0;
                     @media (max-width: 992px){
                         width: 100%;
                     }
@@ -474,6 +523,7 @@ section{
                 .noodle_image{
                     width: 50%;
                     position: relative;
+                    opacity: 0;
                     @media (max-width: 992px){
                         width: 90%;
                     }
@@ -494,6 +544,7 @@ section{
                 }
             }
             .image{
+                opacity: 1;
                 width: 30%;
                 height: 100%;
                 position: absolute;
@@ -578,6 +629,7 @@ section{
                     padding-left: 40px;
                 }
                 .bl-text{
+                    opacity: 0;
                     position: absolute;
                     top: 50%;
                     left: 100%;
@@ -654,6 +706,7 @@ section{
                     }
                 }
                 .icon{
+                    opacity: 0;
                     position: absolute;
                     &.icon1{
                         width: 116px;
@@ -743,6 +796,7 @@ section{
                     width: 55%;
                     height: 25%;
                     position: relative;
+                    opacity: 0;
                     @media (max-width: 992px){
                         height: 230px;
                         min-height: 210px;
@@ -880,6 +934,7 @@ section{
                         padding-top: 20px;
                     }
                     .text{
+                        opacity: 0;
                         width: 75%;
                         text-align: right;
                         font-size: 18px;
@@ -901,6 +956,7 @@ section{
                         }
                     }
                     .image{
+                        opacity: 0;
                         width: 25%;
                         display: flex;
                         align-items: center;
@@ -960,6 +1016,7 @@ section{
                         background: url('../images/ellipse3.png') center no-repeat;
                         background-size: cover;
                         height: 100%;
+                        opacity: 0;
                         .ellipse{
                             width: 97%;
                             height: 100%;
@@ -968,6 +1025,7 @@ section{
                             background-size: 95%;
                             position: relative;
                             .noodle{
+                                opacity: 0;
                                 position: absolute;
                                 top: 50%;
                                 left: 50%;
@@ -1003,8 +1061,10 @@ section{
                         width: 25%;
                         align-items: center;
                         display: flex;
+                        opacity: 0;
                     }
                     .text{
+                        opacity: 0;
                         width: 75%;
                         font-size: 18px;
                         display: flex;
@@ -1030,6 +1090,7 @@ section{
             display: flex;
             flex-wrap: wrap;
             .text-wrap{
+                opacity: 0;
                 width: 70%;
                 position: relative;
                 background: url('../images/background6.png') center no-repeat;
@@ -1098,6 +1159,7 @@ section{
                 }
             }
             .image{
+                opacity: 0;
                 width: 30%;
                 background: url('../images/phophoccori.png') center no-repeat;
                 background-size: cover;
